@@ -124,7 +124,7 @@ const config = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, require('@tailwindcss/line-clamp')],
 }
 
 export default config

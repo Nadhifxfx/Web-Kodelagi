@@ -41,14 +41,14 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 pt-24">
       <div className="container mx-auto px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-3xl font-bold text-foreground mb-3">
+          <h1 className="text-5xl font-bold text-foreground mb-3">
             Get in <span className="text-gradient">Touch</span>
           </h1>
           <p className="text-muted-foreground max-w-md mx-auto">

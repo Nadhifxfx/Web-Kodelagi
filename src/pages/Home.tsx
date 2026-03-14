@@ -107,7 +107,17 @@ function slugifyCourseTitle(title: string) {
 
 function courseImageUrlFor(title: string) {
   const slug = slugifyCourseTitle(title)
-  return `/assets/courses/${slug}.png`
+
+  const extBySlug: Record<string, string> = {
+    "front-end-developer-track": "png",
+    "back-end-developer-track": "png",
+    "mobile-developer-track": "png",
+    "game-developer-track": "webp",
+    "machine-learning-track": "png",
+  }
+
+  const ext = extBySlug[slug] ?? "png"
+  return `/assets/courses/${slug}.${ext}`
 }
 
 const TRACKS: Track[] = [
@@ -305,7 +315,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-5 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-               Kodelagi adalah ruang belajar digital yang menggabungkan teori dan praktik pemrograman secara terstruktur untuk membangun pola pikir logis dan inovatif
+               Kodelogi adalah ruang belajar digital yang menggabungkan teori dan praktik pemrograman secara terstruktur untuk membangun pola pikir logis dan inovatif
               </p>
 
               <div className="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
@@ -326,9 +336,9 @@ export default function Home() {
               <div className="mt-10 sm:mt-12 md:mt-14 rounded-3xl border border-accent/16 bg-black/35 backdrop-blur-md px-6 py-7 shadow-[0_30px_120px_-95px_hsl(var(--primary)/0.9)]">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0">
                   {[
-                    { value: "450K+", label: "Happy Customer" },
-                    { value: "20.5k+", label: "Complete Project" },
-                    { value: "150+", label: "Team Members" },
+                    { value: "5", label: "Years" },
+                    { value: "20+", label: "Complete Project" },
+                    { value: "150+", label: "Members" },
                   ].map((item, idx) => (
                     <div
                       key={item.label}
@@ -419,6 +429,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TAGLINE */}
+      <section className="overflow-hidden py-20 md:py-24">
+        <div className="container">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="mx-auto max-w-5xl text-center"
+          >
+            <p className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground/95">
+              Unlock your
+              <span className="block">
+                Developer <span className="text-gradient">Potential.</span>
+              </span>
+            </p>
+          </motion.div>
+        </div>
+
+        {(() => {
+          const iconFiles = [
+            "c-sharp.png",
+            "css.png",
+            "dart.png",
+            "flutter.png",
+            "git.png",
+            "golang.png",
+            "html.png",
+            "java.png",
+            "javascript.png",
+            "kotlin.png",
+            "mysql.png",
+            "nodejs.png",
+            "php.png",
+            "postgresql.svg",
+            "python.png",
+            "react.png",
+            "s.png",
+            "swift.png",
+            "tailwind.png",
+            "typescript.png",
+          ]
+
+          const icons = iconFiles.map((file) => {
+            const name = file.replace(/\.(png|svg|webp|jpg|jpeg)$/i, "")
+            return { src: `/Icon/${file}`, alt: name }
+          })
+
+          return (
+            <div className="relative mt-12 md:mt-14 w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+              <div className="tagline-marquee flex w-max items-center gap-4">
+                {icons.concat(icons).map((icon, index) => (
+                  <div
+                    key={`${icon.alt}-${index}`}
+                    className="h-14 w-14 rounded-2xl border border-border/60 bg-background/10 flex items-center justify-center transition-transform duration-200 hover:scale-110"
+                    aria-label={icon.alt}
+                    role="img"
+                  >
+                    <img
+                      src={icon.src}
+                      alt={icon.alt}
+                      loading="lazy"
+                      draggable={false}
+                      className="h-8 w-8 object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        })()}
+      </section>
+
       {/* CONTENT: LEARNING PATH + COURSES */}
       <section id="content" className="py-20 md:py-24">
         <div className="container">
@@ -455,7 +539,7 @@ export default function Home() {
             >
               <div className="flex items-start justify-center lg:justify-start">
                 <img
-                  src="/robot.png"
+                  src="/Robot 1.png"
                   alt=""
                   aria-hidden
                   loading="lazy"
@@ -513,37 +597,48 @@ export default function Home() {
                           </div>
                         </button>
 
-                        {isOpen ? (
-                          <div className="px-6 pb-6 -mt-1">
-                            <ul className="mt-2 space-y-2">
-                              {track.items.map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-foreground/90">
-                                  <BadgeCheck className="mt-0.5 h-4 w-4 text-muted-foreground" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
+                        <AnimatePresence initial={false}>
+                          {isOpen ? (
+                            <motion.div
+                              key={`${track.key}-content`}
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.22, ease: "easeOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-6 pb-6 -mt-1">
+                                <ul className="mt-2 space-y-2">
+                                  {track.items.map((item) => (
+                                    <li key={item} className="flex items-start gap-2 text-sm text-foreground/90">
+                                      <BadgeCheck className="mt-0.5 h-4 w-4 text-muted-foreground" />
+                                      <span>{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
 
-                            <div className="mt-5 flex flex-wrap items-center gap-3">
-                              <button
-                                type="button"
-                                onClick={() => navigate("/learning-path")}
-                                className={
-                                  "inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors hover:bg-background/60 " +
-                                  track.tone.link
-                                }
-                              >
-                                Lihat Path <span aria-hidden>→</span>
-                              </button>
+                                <div className="mt-5 flex flex-wrap items-center gap-3">
+                                  <button
+                                    type="button"
+                                    onClick={() => navigate("/learning-path")}
+                                    className={
+                                      "inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/40 px-5 py-2 text-xs font-semibold tracking-widest uppercase transition-colors hover:bg-background/60 " +
+                                      track.tone.link
+                                    }
+                                  >
+                                    Lihat Path <span aria-hidden>→</span>
+                                  </button>
 
-                              {index === 0 ? (
-                                <p className="text-xs text-muted-foreground">
-                                  Mulai dari sini kalau kamu baru belajar.
-                                </p>
-                              ) : null}
-                            </div>
-                          </div>
-                        ) : null}
+                                  {index === 0 ? (
+                                    <p className="text-xs text-muted-foreground">
+                                      Mulai dari sini kalau kamu baru belajar.
+                                    </p>
+                                  ) : null}
+                                </div>
+                              </div>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
                       </div>
                     )
                   })}

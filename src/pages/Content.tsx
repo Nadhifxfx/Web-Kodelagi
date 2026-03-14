@@ -29,7 +29,7 @@ const ContentPage = () => {
 
   if (selected) {
     return (
-      <div className="min-h-screen pt-24 py-12">
+      <div className="min-h-screen pt-14 md:pt-20 pb-12">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <button
@@ -81,7 +81,7 @@ const ContentPage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24 py-12">
+    <div className="min-h-screen pt-14 md:pt-20 pb-12">
       <div className="container mx-auto px-6">
 
         {/* HEADER */}
@@ -90,7 +90,7 @@ const ContentPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground mb-4 leading-[1.05]">
+          <h1 className="mt-7 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground mb-4 leading-[1.05]">
             Choose Your <span className="text-gradient">Courses</span>
           </h1>
 

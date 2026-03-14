@@ -94,4 +94,25 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
+
+  @keyframes tagline-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .tagline-marquee {
+    animation: tagline-marquee 34s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tagline-marquee {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
 }

@@ -122,14 +122,14 @@ export default function LearningPathPage() {
   if (!activePath) return null;
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] pt-20 pb-12">
+    <main className="min-h-[calc(100vh-4rem)] pt-14 md:pt-20 pb-12">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-10 text-center"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-[1.05]">
+          <h1 className="mt-7 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-[1.05]">
             Choose Your <span className="text-gradient">Learning Path</span>
           </h1>
           <p className="mt-5 text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -208,7 +208,7 @@ export default function LearningPathPage() {
 
                 <div className="flex-1">
                   <div className="mx-auto max-w-[520px] rounded-full border border-border/60 bg-background/10 px-4 py-1.5 text-[11px] text-muted-foreground">
-                    <span className="block truncate">kodelagi.dev/learning-path</span>
+                    <span className="block truncate">kodelogi.dev/learning-path</span>
                   </div>
                 </div>
 

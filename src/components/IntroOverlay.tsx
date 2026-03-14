@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const DEFAULT_WORDS = ["Selamat Datang", "科德拉吉", "Коделаги", "कोडेलागी", "كودلاجي", "Kodelagi"]
+const DEFAULT_WORDS = ["Selamat Datang", "科德拉吉", "Коделаги", "कोडेलागी", "كودلاجي", "Kodelogi"]
 type IntroShowMode = "always" | "once-per-session"
 
 type IntroOverlayProps = {
@@ -19,7 +19,7 @@ type IntroOverlayProps = {
 
 export default function IntroOverlay({
   showMode = "always",
-  storageKey = "kodelagi:intro_seen",
+  storageKey = "kodelogi:intro_seen",
   wordDurationMs = 700,
   wipeDurationMs = 950,
   holdLastWordMs = 900,
@@ -166,7 +166,7 @@ export default function IntroOverlay({
                     transition={{ duration: 0.32, ease: "easeOut" }}
                     className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight"
                   >
-                    {currentWord === "Kodelagi" ? (
+                    {currentWord === "Kodelogi" ? (
                       <span className="text-gradient">{currentWord}</span>
                     ) : (
                       currentWord

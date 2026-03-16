@@ -53,7 +53,7 @@ const App = () => {
       {/* HERO */}
       <section
         id="home"
-        className={`pt-14 md:pt-20 pb-20 px-6 transition-all duration-1000 transform ${
+        className={`pt-20 md:pt-20 pb-20 px-6 transition-all duration-1000 transform ${
           isVisible
             ? "translate-y-0 opacity-100"
             : "translate-y-10 opacity-0"
@@ -61,8 +61,7 @@ const App = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="mt-7 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-[1.05]">
-            Membangun Karir <br />
-            <span className="text-gradient">Developer Masa Depan.</span>
+              We Are <span className="text-gradient">Kodelogi</span>
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -147,7 +146,7 @@ const App = () => {
                   name: "Nadhif",
                   role: "Backend & System Architect",
                   handle: "Nadhif Fathur Rahman",
-                  imageUrl: "/team/Nadhif.png",
+                  imageUrl: "/team/Dip2.png",
                 },
                 {
                   name: "Fahmi",

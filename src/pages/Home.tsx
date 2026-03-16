@@ -210,7 +210,7 @@ const SHOWCASES = [
   {
     title: "Vidio",
     tag: "Streaming Platform / Media Technology",
-    desc: "Vidio adalah platform streaming video Indonesia yang menyediakan film, serial, olahraga, dan siaran televisi secara online..",
+    desc: "Vidio adalah platform streaming video Indonesia yang menyediakan film, serial, olahraga, dan siaran televisi secara online.",
     imageSrc: "/vidio.png",
     accent: "from-accent/18 via-background/10 to-primary/16",
     stack: ["/Icon/react.png", "/Icon/tailwind.png", "/Icon/go.png", "/Icon/typescript.png"],
@@ -218,7 +218,7 @@ const SHOWCASES = [
   {
     title: "Space for the Unbound",
     tag: "Game Development / Narrative Adventure",
-    desc: "A Space for the Unbound adalah game petualangan berbasis cerita dengan visual pixel art yang menggambarkan kehidupan remaja di Indonesia pada era 1990-an. tabel & statistik yang fokus ke readability.",
+    desc: "A Space for the Unbound adalah game petualangan berbasis cerita dengan visual pixel art yang menggambarkan kehidupan remaja di Indonesia pada era 1990-an.",
     imageSrc: "/space for the unbond.jpeg",
     accent: "from-primary/16 via-background/10 to-primary/6",
     stack: ["/Icon/c-sharp.png"],
@@ -234,7 +234,7 @@ const SHOWCASES = [
   {
     title: "Coffe Talk",
     tag: "Game Development / Visual Novel",
-    desc: "Struktur konten + Coffee Talk adalah game visual novel buatan studio Indonesia yang berfokus pada percakapan antara karakter di sebuah coffee shop dengan atmosfer santai dan cerita mendalam. yang mudah dipakai.",
+    desc: "Coffee Talk adalah game visual novel buatan studio Indonesia yang berfokus pada percakapan antara karakter di sebuah coffee shop dengan atmosfer santai dan cerita mendalam.",
     imageSrc: "/Coffe talk.webp",
     accent: "from-primary/14 via-background/10 to-accent/10",
     stack: ["/Icon/c-sharp.png"],
@@ -301,7 +301,7 @@ export default function Home() {
           <div className="absolute -left-40 -bottom-44 h-[560px] w-[560px] rounded-full blur-3xl opacity-35 bg-[radial-gradient(circle_at_40%_40%,hsl(var(--primary)/0.45),hsl(var(--accent)/0.18)_42%,transparent_72%)]" />
         </div>
 
-        <div className="container px-6 relative z-10 min-h-[calc(100vh-4rem)] py-14 md:py-20 flex items-center">
+        <div className="container px-6 relative z-10 min-h-[calc(100vh-4rem)] pt-20 pb-14 md:py-20 flex items-center">
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -311,7 +311,7 @@ export default function Home() {
           >
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mt-7 text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">
-                Dari Nol Jadi <span className="text-gradient">Developer</span>
+                Membangun Karir <span className="text-gradient">Developer Masa Depan.</span>
               </h1>
 
               <p className="mt-5 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">

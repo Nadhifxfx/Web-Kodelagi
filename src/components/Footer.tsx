@@ -25,7 +25,7 @@ export default function Footer() {
                   className="h-6 w-6 object-contain"
                 />
               </div>
-              <span className="font-semibold text-base tracking-tight text-foreground">Kodelogi</span>
+              <span className="font-semibold text-base tracking-tight text-gradient">Kodelogi</span>
             </Link>
 
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
@@ -108,7 +108,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 border-t border-border/60 pt-10 text-center text-xs text-muted-foreground tracking-widest">
-          © {new Date().getFullYear()} KODELOGI. ALL RIGHTS RESERVED.
+          © {new Date().getFullYear()} <span className="text-gradient">KODELOGI</span>. ALL RIGHTS RESERVED.
         </div>
       </div>
     </footer>

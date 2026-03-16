@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 const NAV_LINKS: { label: string; path: string }[] = [
   { label: "Home", path: "/" },
-  { label: "Courses", path: "/courses" },
   { label: "Learning Path", path: "/learning-path" },
+  { label: "Courses", path: "/courses" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ]

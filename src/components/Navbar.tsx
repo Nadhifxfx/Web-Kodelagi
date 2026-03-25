@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "./Theme";
 import { Sun, Moon, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,7 +12,6 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -84,18 +82,6 @@ const Navbar = () => {
               >
                 Contact
               </Link>
-
-              <button
-                onClick={toggleTheme}
-                className="h-10 w-10 rounded-full border border-border/60 bg-background/10 flex items-center justify-center hover:glow-primary transition-all"
-                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              >
-                {theme === "dark" ? (
-                  <Moon className="w-5 h-5 text-foreground" />
-                ) : (
-                  <Sun className="w-5 h-5 text-foreground" />
-                )}
-              </button>
 
               <button
                 onClick={() => setMobileOpen(true)}

@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "Courses", path: "/courses" },
   { label: "Learning Path", path: "/learning-path" },
+  { label: "Courses", path: "/courses" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
@@ -43,7 +43,7 @@ const Navbar = () => {
                   className="h-6 w-6 object-contain"
                 />
               </div>
-              <span className="hidden sm:inline font-semibold text-base tracking-tight text-foreground">Kodelogi</span>
+              <span className="font-semibold text-sm sm:text-base tracking-tight text-gradient">Kodelogi</span>
             </Link>
 
             {/* Desktop Nav */}

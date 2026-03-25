@@ -122,7 +122,7 @@ export default function LearningPathPage() {
   if (!activePath) return null;
 
   return (
-    <main className="min-h-[calc(100vh-4rem)] pt-14 md:pt-20 pb-12">
+    <main className="min-h-[calc(100vh-4rem)] pt-20 md:pt-20 pb-12">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 14 }}

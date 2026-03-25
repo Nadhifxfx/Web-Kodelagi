@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import IntroOverlay from "./components/IntroOverlay";
 import RouteWipeTransition from "./components/RouteWipeTransition";
 import Home from "./pages/Home";
-import Content from "./pages/Content";
+import Course from "./pages/Course";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import LearningPath from "./pages/LearningPath";
@@ -93,7 +93,7 @@ export default function App() {
                 path="/courses"
                 element={
                   <PageTransition>
-                    <Content />
+                    <Course />
                   </PageTransition>
                 }
               />

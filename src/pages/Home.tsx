@@ -301,7 +301,7 @@ export default function Home() {
           <div className="absolute -left-40 -bottom-44 h-[560px] w-[560px] rounded-full blur-3xl opacity-35 bg-[radial-gradient(circle_at_40%_40%,hsl(var(--primary)/0.45),hsl(var(--accent)/0.18)_42%,transparent_72%)]" />
         </div>
 
-        <div className="container px-6 relative z-10 min-h-[calc(100vh-4rem)] pt-20 pb-14 md:py-20 flex items-center">
+        <div className="container px-6 relative z-10 min-h-[calc(110vh-4rem)] pt-20 pb-14 md:py-20 flex items-center">
           <motion.div
             variants={fadeUp}
             initial="hidden"

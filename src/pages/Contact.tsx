@@ -73,7 +73,7 @@ const Contact = () => {
                   <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-4 h-4" />
                   </span>
-                  nadhiffathur@gmail.com
+                  ismawatiainur@gmail.com 
                 </a>
                 <a
                   href="mailto:ismawatiainur@gmail.com"
@@ -82,7 +82,7 @@ const Contact = () => {
                   <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                     <Mail className="w-4 h-4" />
                   </span>
-                  ismawatiainur@gmail.com
+                  nadhiffathur@gmail.com
                 </a>
                 <a
                   href="mailto:fbasyarz@gmail.com"

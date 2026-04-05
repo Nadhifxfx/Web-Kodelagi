@@ -146,7 +146,7 @@ const App = () => {
                   name: "Nadhif",
                   role: "Backend & System Architect",
                   handle: "Nadhif Fathur Rahman",
-                  imageUrl: "/team/Dip2.png",
+                  imageUrl: "/team/Nadhif.png",
                 },
                 {
                   name: "Fahmi",

@@ -25,28 +25,41 @@ const CoursePage = () => {
   // FILTERS (group + query + sort)
   const normalizedQuery = query.trim().toLowerCase();
 
-  const filteredCategories = (() => {
-    let result = selectedGroup
-      ? categories.filter((c) => c.group === selectedGroup)
-      : categories;
+const filteredCategories = (() => {
+  let result = selectedGroup
+    ? categories.filter((c) => c.group === selectedGroup)
+    : categories;
 
-    if (normalizedQuery.length > 0) {
-      result = result.filter((c) => {
-        const haystack = `${c.title} ${c.group} ${c.description}`.toLowerCase();
-        return haystack.includes(normalizedQuery);
-      });
-    }
+  // 🔍 SEARCH (pakai scoring biar akurat)
+  if (normalizedQuery.length > 0) {
+    result = result
+      .map((c) => {
+        const q = normalizedQuery;
 
+        let score = 0;
+
+        if (c.title.toLowerCase().includes(q)) score += 3;
+        if (c.group?.toLowerCase().includes(q)) score += 2;
+        if (c.description.toLowerCase().includes(q)) score += 1;
+
+        return { ...c, score };
+      })
+      .filter((c) => c.score > 0)
+      .sort((a, b) => b.score - a.score);
+  }
+
+  if (normalizedQuery.length === 0) {
     if (sort === "az") {
       result = [...result].sort((a, b) => a.title.localeCompare(b.title));
     } else if (sort === "za") {
       result = [...result].sort((a, b) => b.title.localeCompare(a.title));
     }
+  }
 
-    return result;
-  })();
+  return result;
+})();
 
-  const groups = ["all", "frontend", "backend", "game", "machine learning", "tools"];
+  const groups = ["all", "frontend", "backend", "game", "machine learning", "tools", "mobile"];
 
   const setParam = (key: string, value?: string) => {
     setSearchParams((prev) => {
@@ -65,7 +78,7 @@ const CoursePage = () => {
 
   if (selected) {
     return (
-      <div className="min-h-screen pt-20 md:pt-20 pb-12">
+      <div className="min-h-screen pt-20 md:pt-24 pb-12">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <button
